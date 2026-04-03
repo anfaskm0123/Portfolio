@@ -16,6 +16,12 @@
             --accent-hover: #163a5a;
             --text-main: #1a202c;
             --text-light: #4a5568;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.04);
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --badge-bg: #f1f5f9;
+            --badge-text: #334155;
+            --hero-glow: rgba(31, 78, 121, 0.04);
             --font-main: 'Inter', sans-serif;
             --whatsapp-color: #25D366;
             --whatsapp-hover: #1da851;
@@ -24,6 +30,21 @@
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        [data-theme="dark"] {
+            --primary-bg: #0f172a;
+            --secondary-bg: #1e293b;
+            --accent-color: #60a5fa;
+            --accent-hover: #3b82f6;
+            --text-main: #f8fafc;
+            --text-light: #cbd5e1;
+            --card-bg: #1e293b;
+            --card-border: rgba(255, 255, 255, 0.05);
+            --nav-bg: rgba(15, 23, 42, 0.85);
+            --badge-bg: #334155;
+            --badge-text: #f8fafc;
+            --hero-glow: rgba(96, 165, 250, 0.05);
         }
 
         * {
@@ -46,7 +67,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.85);
+            background: var(--nav-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             box-shadow: var(--shadow-sm);
@@ -338,11 +359,11 @@
         }
 
         .cert-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: var(--border-radius);
             padding: 2.5rem 2rem;
             transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--card-border);
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
@@ -443,8 +464,8 @@
         }
 
         .skill-group {
-            background: white;
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             border-radius: var(--border-radius);
             padding: 2.5rem 2rem;
             transition: var(--transition);
@@ -642,10 +663,17 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
                 <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#designs">Creative Works</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#designs">Designs</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <div class="theme-switch" id="theme-switch" style="cursor:pointer; font-size: 1.2rem; display: flex; align-items: center; color: var(--text-main); margin-left: 0.5rem;">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -666,12 +694,43 @@
         <p class="hero-tagline">"Where Creativity Meets Code"</p>
 
         <div class="hero-cta">
-            <a href="#certificates" class="btn btn-primary">
+            <a href="YOUR_RESUME_PDF_LINK_HERE.pdf" target="_blank" class="btn btn-primary" download>
+                <i class="fas fa-file-pdf"></i> Download Resume
+            </a>
+            <a href="#certificates" class="btn btn-outline">
                 <i class="fas fa-award"></i> View Certificates
             </a>
-            <a href="#contact" class="btn btn-outline">
-                <i class="fas fa-envelope"></i> Get in Touch
-            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="min-height: auto; padding: 5rem 2rem; background: var(--secondary-bg); border-radius: 2.5rem; margin: 2rem auto; max-width: 1200px;">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Bridging the gap between design thinking and technical execution</p>
+        
+        <div style="max-width: 900px; margin: 0 auto; display: grid; gap: 3rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div style="padding: 1rem;">
+                <h3 style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 1rem;"><i class="fas fa-user-circle"></i> Who I Am</h3>
+                <p style="color: var(--text-light); line-height: 1.8; font-size: 1.05rem;">
+                    I am a highly motivated BCA (Bachelor of Computer Applications) candidate who loves turning creative ideas into functional reality. I combine my strong foundation in creative design—video editing, brand identity, and UI/UX—with technical skills in programming, databases, and version control to build comprehensive digital experiences.
+                </p>
+            </div>
+            
+            <div class="cert-card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(31, 78, 121, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent-color); font-size: 1.5rem;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.2rem; color: var(--text-main);">Education</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Bachelor of Computer Applications</p>
+                    </div>
+                </div>
+                <div style="padding-left: 1rem; border-left: 2px solid var(--accent-color);">
+                    <h4 style="color: var(--text-main); margin-bottom: 0.2rem;">University Degree</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem;">Focus on Software Development, UI Design & Database Engineering</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -716,6 +775,38 @@
                 <div class="cert-year"><i class="far fa-calendar-alt"></i> 2024</div>
                 <div class="cert-link-text">View Certificate <i class="fas fa-arrow-right"></i></div>
             </a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background: var(--primary-bg);">
+        <h2 class="section-title">Software Projects</h2>
+        <p class="section-subtitle">Applications and systems I'm currently building</p>
+
+        <div class="cert-grid" style="max-width: 900px; margin: 0 auto;">
+            <div class="cert-card" style="position: relative; overflow: hidden; padding: 0;">
+                <!-- Maintenance Badge Overlay -->
+                <div style="position: absolute; top: 25px; right: -40px; background: #eab308; color: #854d0e; font-weight: 700; font-size: 0.8rem; padding: 0.5rem 4rem; transform: rotate(45deg); box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;">
+                    <i class="fas fa-tools"></i> WORK IN PROGRESS
+                </div>
+                
+                <div style="height: 220px; background: var(--secondary-bg); display: flex; align-items: center; justify-content: center; color: var(--text-light); border-bottom: 1px solid var(--card-border);">
+                    <i class="fas fa-laptop-code" style="font-size: 4rem; opacity: 0.3;"></i>
+                </div>
+                
+                <div style="padding: 2.5rem;">
+                    <span class="cert-badge" style="background: rgba(147, 51, 234, 0.1); color: #9333ea; margin-bottom: 1rem; display: inline-block;">College Capstone</span>
+                    <h3 class="cert-title" style="font-size: 1.5rem;">Interactive Management System</h3>
+                    <p class="cert-issuer" style="margin-top: 1rem; margin-bottom: 2rem; line-height: 1.6; font-size: 1.05rem;">
+                        A comprehensive web application currently in development. It bridges the gap between complex database systems and intuitive user interfaces for creative professionals.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.95rem; opacity: 0.6; cursor: not-allowed;" onclick="event.preventDefault();">
+                            <i class="fas fa-lock"></i> Code Private
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -852,11 +943,36 @@
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.background = 'var(--nav-bg)';
+                nav.style.backdropFilter = 'blur(16px)';
                 navContainer.style.padding = '0.8rem 2rem';
             } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.85)';
+                nav.style.background = 'var(--nav-bg)';
+                nav.style.backdropFilter = 'blur(12px)';
                 navContainer.style.padding = '1.25rem 2rem';
+            }
+        });
+
+        // Theme Toggle Implementation
+        const themeSwitch = document.getElementById('theme-switch');
+        const themeIcon = themeSwitch.querySelector('i');
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('portfolioTheme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeSwitch.addEventListener('click', () => {
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('portfolioTheme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('portfolioTheme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
             }
         });
 
