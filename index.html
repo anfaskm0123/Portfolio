@@ -805,10 +805,12 @@
                     </a>
                 </div>
                 <div class="socials-row">
-                    <a href="YOUR_LINKEDIN_LINK_HERE" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <a href="www.linkedin.com/in/anfaskm755894" target="_blank" rel="noopener noreferrer"
+                        class="social-link">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://github.com/anfaskm0123" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <a href="https://github.com/anfaskm0123" target="_blank" rel="noopener noreferrer"
+                        class="social-link">
                         <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
@@ -822,10 +824,8 @@
 
     <!-- Scripts -->
     <script>
-        // Set dynamic year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Mobile Navigation Toggle
         const mobileToggle = document.getElementById('mobile-toggle');
         const navLinks = document.getElementById('nav-links');
         const navItems = navLinks.querySelectorAll('a');
@@ -840,7 +840,6 @@
             }
         });
 
-        // Close mobile menu on link click
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -848,7 +847,6 @@
             });
         });
 
-        // Add shadow to navbar and adjust padding on scroll
         const nav = document.getElementById('navbar');
         const navContainer = nav.querySelector('.nav-container');
 
@@ -862,7 +860,6 @@
             }
         });
 
-        // Add smooth reveal animation for sections on scroll
         const observerOptions = {
             root: null,
             rootMargin: '0px',
